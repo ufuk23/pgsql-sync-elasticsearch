@@ -51,17 +51,15 @@ config file that contains the PGSQL config also the query.
 0. Run this compose:
    ` docker-compose -f docker-compose-indexer.yml up --force-recreate `
 1. Create a PGSQL database called: test
-2. Insert into a table called customer
-3. Make sure the full-stack is running
-4. Check the result in Dejavu
-   `http://localhost:1358/?appname=customer&url=http://localhost:9200&mode=view`
-   
-CREATE TABLE "public"."customer" (
+2. CREATE TABLE "public"."customer" (
   "customer_id" int4 NOT NULL,
   "customer_name" char(50) COLLATE "default" NOT NULL,
   "address" char(50) COLLATE "default",
   "city" char(50) COLLATE "default",
   "state" char(25) COLLATE "default",
   "zip_code" char(10) COLLATE "default",
-  "update_date" TIMESTAMP
-)
+  "update_date" TIMESTAMP)
+3. Insert into a table called customer
+4. Make sure the full-stack is running
+5. Check the result in Dejavu
+   `http://localhost:1358/?appname=customer&url=http://localhost:9200&mode=view`
